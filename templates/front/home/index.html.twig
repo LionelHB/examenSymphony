@@ -1,0 +1,23 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Accueil FakeCentrale
+{% endblock %}
+
+{% block body %}
+
+
+	<h1>La FakeCentrale</h1>
+
+
+	<h2 class="my-5">Dernières annonces</h2>
+
+	<div class="row">
+		{% for listing in listings %}
+			{% include 'front/partial/listing_card.html.twig' with
+                {
+                   'lastListing': listing
+                }
+            %}
+		{% endfor %}
+	</div>
+{% endblock %}

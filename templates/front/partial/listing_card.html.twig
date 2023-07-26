@@ -1,0 +1,29 @@
+{% if containerClass is not defined %}
+	{% set containerClass = 'col-lg-4 col-md-6 col-sm-12' %}
+{% endif %}
+
+<div id="containercard" class="{{ containerClass }}">
+	<div class="card-lastListing-container">
+
+		<a href="{{ path('app_listing_show', { 'id': listing.id }) }}">
+			<img src="{{ lastListing.image }}" alt="{{ lastListing.model.name }}">
+		</a>
+
+	</div>
+	<div class="d-flex justify-content-between">
+		<div>
+			<p class="card-lastListing-name">{{ lastListing.model.brand.name }}
+				{{ lastListing.model.name }}</p>
+		</div>
+
+		<div>
+			{{ lastListing.price }}€
+		</div>
+
+	</div>
+	<p>Année de sortie:
+		{{ lastListing.producedYear }}</p>
+	<p>Kilométrage:
+		{{ lastListing.mileage }}
+		km</p>
+</div>
